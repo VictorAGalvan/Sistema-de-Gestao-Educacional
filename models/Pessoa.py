@@ -27,7 +27,7 @@ class Pessoa(ABC):
         self.__Dtnascimento = novo_Dtnascimento
     def calcular_idade(self):
         idade =0
-        hoje = date.now()
+        hoje = date.today()
         ano = self.Dtnasicmento.year
         mes = self.Dtnasicmento.month
         dia = self.Dtnasicmento.day

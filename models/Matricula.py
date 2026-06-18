@@ -54,9 +54,13 @@ class Matricula():
         self.__status.concluir()
 
     def calcular_nota_final(self, disciplina):
+        if not self.pode_receber_nota():
+            print("Matricula nao esta em andamento.")
+            return 0.0
         nota = disciplina.calculo.calcular(disciplina, self)
         self.__notas_finais[disciplina] = nota
         return nota
+    
     def __eq__(self, other):
         return self.__codigo == other.__codigo
 
@@ -80,3 +84,5 @@ class Matricula():
             f"Data: {self.__data.strftime('%d/%m/%Y')} | "
             f"Status: {self.__status}"
         )
+    def pode_receber_nota(self) -> bool:
+        return self.status == StatusAndamento(self)

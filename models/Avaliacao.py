@@ -5,10 +5,10 @@ from models.Matricula import Matricula
 
 
 class Avaliacao():
-    def __init__(self, data:date, peso:int, provas:list[Prova]):
+    def __init__(self, data:date, peso:int, provas:dict[Matricula,Prova]):
         self.__data = data
         self.__peso = peso
-        self.__prova:list[Prova] = provas
+        self.__prova:dict[Matricula, Prova] = provas
     @property
     def data(self):
         return self.__data

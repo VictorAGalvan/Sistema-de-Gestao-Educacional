@@ -15,5 +15,7 @@ class FactoryPessoa():
             pessoa = Responsavel(nome,cpf,Dtnascimento)
         elif tipo_pessoa == "professor":
             pessoa = Professor(nome,cpf,Dtnascimento, kwargs.get("formacao"))
+        else:
+            print("Não foi possivel instanciar a pessoa")
         return pessoa
 

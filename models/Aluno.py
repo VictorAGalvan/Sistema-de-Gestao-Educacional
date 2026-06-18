@@ -87,3 +87,5 @@ class Aluno(Pessoa):
             f"Responsáveis: {nomes_resp} | "
             f"Matrículas: {len(self.__matriculas)}"
         )
+    def exibir_dados(self):
+        print(f"Aluno: {self.nome} | CPF: {self.cpf} | Pai: {self.pai} | Mãe: {self.mae} | Responsáveis: {self.responsaveis} | Matrículas: {len(self.__matriculas)}")

@@ -19,3 +19,5 @@ class Professor(Pessoa):
             f"CPF: {self.cpf} | "
             f"Formação: {self.formacao}"
         )
+    def exibir_dados(self):
+        print(f"Professor: {self.nome} | CPF: {self.cpf} | Formação: {self.formacao}")
