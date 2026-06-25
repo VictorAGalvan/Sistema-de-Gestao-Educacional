@@ -20,7 +20,6 @@ class Pessoa(ABC):
         self.__nome = nome
     @cpf.setter
     def cpf(self,cpf:str):
-        # por praticidade não irei validar
         if (not self.validar_cpf(cpf)):
             raise Exception("Erro cpf inválido")
     

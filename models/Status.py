@@ -7,7 +7,7 @@ from abc import ABC, abstractmethod
 class StatusMatricula(ABC):
 
 
-    def __init__(self, matricula: Matricula):
+    def __init__(self, matricula):
         self._matricula = matricula
 
     @abstractmethod

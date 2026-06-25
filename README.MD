@@ -70,3 +70,13 @@ A responsabilidade da fábrica é validar a classe solicitada e retornar uma ins
 6. Avaliações e provas são registradas.
 7. As notas são calculadas pela estratégia associada à disciplina.
 8. Ao final do período, a matrícula pode ser concluída ou cancelada conforme as regras do padrão State.
+
+## Declaração de Uso de IA
+ 
+Utilizei IA como ferramenta de apoio.
+ 
+**Ferramenta(s):** Claude Sonnet 4.6
+ 
+**Finalidade:** Verificação e validação de partes do código, auxílio na busca de comandos específicos e suporte em situações onde não conseguia encontrar uma solução, utilizando a IA para sugerir ideias e caminhos possíveis.
+ 
+**Validação:** Declaro que todo o código gerado foi lido, testado e ajustado conforme as necessidades específicas do projeto e da disciplina. A responsabilidade pela arquitetura, decisões de design e correção do código é de minha total responsabilidade.
