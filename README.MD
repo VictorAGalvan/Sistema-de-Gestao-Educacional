@@ -1,5 +1,5 @@
 
-![alt text](<Diagrama sistema educacional.png>)
+![alt text](<Diagrama sistema educacional.jpeg>)
 
 # Dificuldades Encontradas:
 
