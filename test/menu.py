@@ -50,7 +50,14 @@ while opcao != "0":
 
             if op == "1":
                 nome = input("Nome: ")
-                cpf = input("CPF: ")
+                
+                while True:
+                  
+                    cpf = input("CPF: ")
+                    if (Professor.validar_cpf(cpf)):
+                        break
+                    else:
+                        print("CPF invalido")
                 while True:
                     try:
                         texto = input("Data de nascimento (dd/mm/aaaa): ")
@@ -60,10 +67,14 @@ while opcao != "0":
                     except:
                         print("Data invalida, tente novamente.")
                 formacao = input("Formacao: ")
-                prof = Professor(nome, cpf, nascimento, formacao)
-                professores.append(prof)
-                print("Professor cadastrado!")
-                print(prof)
+                try:
+                    prof = Professor(nome, cpf, nascimento, formacao)
+                    professores.append(prof)
+                    print("Professor cadastrado!")
+                    print(prof)
+                except Exception as e:
+                    print(e)
+                
 
             elif op == "2":
                 print("\n--- Professores ---")
@@ -86,7 +97,13 @@ while opcao != "0":
 
             if op == "1":
                 nome = input("Nome: ")
-                cpf = input("CPF: ")
+                while True:
+                   
+                    cpf = input("CPF: ")
+                    if (Responsavel.validar_cpf(cpf)):
+                        break
+                    else:
+                        print("CPF invalido")
                 while True:
                     try:
                         texto = input("Data de nascimento (dd/mm/aaaa): ")
@@ -95,11 +112,13 @@ while opcao != "0":
                         break
                     except:
                         print("Data invalida, tente novamente.")
-                r = Responsavel(nome, cpf, nascimento)
-                responsaveis.append(r)
-                print("Responsavel cadastrado!")
-                print(r)
-
+                try:
+                    r = Responsavel(nome, cpf, nascimento)
+                    responsaveis.append(r)
+                    print("Responsavel cadastrado!")
+                    print(r)
+                except Exception as e:
+                    print (e)
             elif op == "2":
                 print("\n--- Responsaveis ---")
                 if len(responsaveis) == 0:
@@ -121,7 +140,13 @@ while opcao != "0":
 
             if op == "1":
                 nome = input("Nome: ")
-                cpf = input("CPF: ")
+                while True:
+                    
+                    cpf = input("CPF: ")
+                    if (Aluno.validar_cpf(cpf)):
+                        break
+                    else:
+                        print("CPF invalido")
                 while True:
                     try:
                         texto = input("Data de nascimento (dd/mm/aaaa): ")
@@ -129,6 +154,7 @@ while opcao != "0":
                         nascimento = date(int(ano), int(mes), int(dia))
                         break
                     except:
+                        
                         print("Data invalida, tente novamente.")
                 pai = None
                 mae = None
@@ -171,10 +197,13 @@ while opcao != "0":
                         except:
                             pass
                         print("Adicionar mais? (s/n)")
-                aluno = Aluno(nome, cpf, nascimento, pai, mae, resps)
-                alunos.append(aluno)
-                print("Aluno cadastrado!")
-                print(aluno)
+                try:
+                    aluno = Aluno(nome, cpf, nascimento, pai, mae, resps)
+                    alunos.append(aluno)
+                    print("Aluno cadastrado!")
+                    print(aluno)
+                except Exception as e:
+                    print(e)
 
             elif op == "2":
                 print("\n--- Alunos ---")
@@ -452,6 +481,7 @@ while opcao != "0":
                         idx = int(input("Escolha a matricula: ")) - 1
                         if 0 <= idx and idx < len(matriculas):
                             matriculas[idx].concluir()
+                            break
                         else:
                             print("Invalido.")
 

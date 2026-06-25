@@ -1,3 +1,19 @@
+
+![alt text](<Diagrama sistema educacional.png>)
+
+# Dificuldades Encontradas:
+
+Estruturar e modelar os objetos de forma que o sistema fosse fácil de expandir e modificar sem precisar alterar muita coisa
+Imports circulares entre arquivos que causaram bugs
+Algumas validações de regras de negócio não funcionavam como planejado e precisaram ser revisadas
+
+# Como resolvi:
+
+Fui depurando e pesquisando. Quando travei, usei IA para pedir ideias, revisar o código em busca de bugs e em alguns casos gerar trechos de código para evitar repetição.
+
+# Principal Aprendizado:
+
+Percebi na prática como a forma de organizar as classes desde o início afeta muito o trabalho depois. Quando as responsabilidades entre as classes não estão bem definidas, pequenos problemas viram dores de cabeça maiores, o que mostrou a importância de pensar na estrutura antes de sair codando.
 ## Pessoas
 
 A classe abstrata `Pessoa` serve como base para `Aluno`, `Professor` e `Responsavel`. Ela concentra funcionalidades comuns, como validação de CPF e cálculo de idade, enquanto as classes filhas são responsáveis por suas particularidades e especializações dentro do sistema.
@@ -20,7 +36,7 @@ A classe `Avaliacao` representa o modelo de uma atividade aplicada aos alunos, a
 
 A classe `Prova` representa a realização dessa avaliação por uma matrícula específica, armazenando dados como a nota obtida.
 
-A relação entre avaliação, matrícula e prova é realizada por meio de uma estrutura baseada em dicionário, permitindo associar cada matrícula à sua respectiva prova.
+A relação entre avaliação, matrícula e prova é realizada por meio de uma estrutura baseada em lista, onde apresenta varias `Provas`
 
 ## State Pattern
 

@@ -20,7 +20,12 @@ class Pessoa(ABC):
         self.__nome = nome
     @cpf.setter
     def cpf(self,cpf:str):
+        # por praticidade não irei validar
+        if (not self.validar_cpf(cpf)):
+            raise Exception("Erro cpf inválido")
+    
         self.__cpf = cpf
+      
         
     @Dtnascimento.setter
     def Dtnascimento(self, novo_Dtnascimento:date):
@@ -28,38 +33,37 @@ class Pessoa(ABC):
     def calcular_idade(self):
         idade =0
         hoje = date.today()
-        ano = self.Dtnasicmento.year
-        mes = self.Dtnasicmento.month
-        dia = self.Dtnasicmento.day
+        ano = self.Dtnascimento.year
+        mes = self.Dtnascimento.month
+        dia = self.Dtnascimento.day
         idade = hoje.year - ano
-        if(dia<hoje.day and mes <hoje.month):
+        if(mes<hoje.month or  (mes == hoje.month and dia > hoje.day)):
             idade -=1
         return idade
 
-    def validar_cpf(self, cpf:str):
+
+    @staticmethod
+    def validar_cpf(cpf: str): 
         cpf = cpf.replace(".", "").replace("-", "")
-        if len(cpf) != 11:
+        if len(cpf) != 11 or not cpf.isdigit():
             return False
-        if not cpf.isdigit():
+
+       
+        if len(set(cpf)) == 1:
             return False
-        soma =0
+
+        soma = 0
         for i in range(9):
-            soma += int(cpf[i]) *(10-i)
-        digito1 = (soma*10)%11
+            soma += int(cpf[i]) * (10 - i)
+        digito1 = (soma * 10) % 11
         if digito1 == 10:
             digito1 = 0
+
         soma = 0
         for i in range(10):
-            soma += int(cpf[i]) *(11-i)
-        digito2 = (soma*10)%11
+            soma += int(cpf[i]) * (11 - i)
+        digito2 = (soma * 10) % 11
         if digito2 == 10:
             digito2 = 0
-        igual = True
-        for i in range(11):
-            if cpf[0] != cpf[i]:
-                igual = False
-                break
-        if (digito1 == int(cpf[9])) and digito2 == int(cpf[10]) and igual:
-            return True
-        else:
-            return False
+
+        return digito1 == int(cpf[9]) and digito2 == int(cpf[10])

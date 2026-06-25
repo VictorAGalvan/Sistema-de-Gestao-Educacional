@@ -6,6 +6,6 @@ class Responsavel(Pessoa):
         
 
     def exibir_dados(self):
-        print("Responsável: {self.nome} | CPF: {self.cpf}")
+        print(f"Responsável: {self.nome} | CPF: {self.cpf} | Idade: {Pessoa.calcular_idade(self)}")
     def __str__(self):
-        return f"Responsável: {self.nome} | CPF: {self.cpf}"
+        return f"Responsável: {self.nome} | CPF: {self.cpf} | Idade: {Pessoa.calcular_idade(self)}"

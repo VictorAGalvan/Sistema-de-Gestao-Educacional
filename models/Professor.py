@@ -17,7 +17,8 @@ class Professor(Pessoa):
         return (
             f"Professor: {self.nome} | "
             f"CPF: {self.cpf} | "
+            f"Idade: {Pessoa.calcular_idade(self)} | "
             f"Formação: {self.formacao}"
         )
     def exibir_dados(self):
-        print(f"Professor: {self.nome} | CPF: {self.cpf} | Formação: {self.formacao}")
+        print(f"Professor: {self.nome} | CPF: {self.cpf} | Idade: {Pessoa.calcular_idade(self)} | Formação: {self.formacao}")

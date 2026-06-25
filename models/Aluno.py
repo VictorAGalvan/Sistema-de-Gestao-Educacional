@@ -82,6 +82,7 @@ class Aluno(Pessoa):
         return (
             f"Aluno: {self.nome} | "
             f"CPF: {self.cpf} | "
+            f"Idade: {Pessoa.calcular_idade(self)} | "
             f"Pai: {pai_str} | "
             f"Mãe: {mae_str} | "
             f"Responsáveis: {nomes_resp} | "
